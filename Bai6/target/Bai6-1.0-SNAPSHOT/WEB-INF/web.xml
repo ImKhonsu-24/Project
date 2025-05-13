@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+         version="3.1">
+    <!-- Servlet -->
+    <servlet>
+        <servlet-name>OnlineTimeServlet</servlet-name>
+        <servlet-class>servlet.OnlineTimeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OnlineTimeServlet</servlet-name>
+        <url-pattern>/online</url-pattern>
+    </servlet-mapping>
+
+    <!-- Filter -->
+    <filter>
+        <filter-name>SessionFilter</filter-name>
+        <filter-class>filter.SessionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SessionFilter</filter-name>
+        <url-pattern>/online</url-pattern>
+    </filter-mapping>
+
+    <!-- Listener -->
+    <listener>
+        <listener-class>listener.SessionListener</listener-class>
+    </listener>
+
+</web-app>
